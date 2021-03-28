@@ -5,6 +5,9 @@ The school board has notified Maria and her supervisor about the evidence of aca
 ## Results:
 ### How is the district summary affected?
 By omitting grade 9th student data from the school district summary, the change in results was very insignificant. A total of 461 student’s maths & reading scores were attributed to Grade 9th Thomas High School students out of a total of 39,170 students in the whole district. This number is 1.1% and hence has not made a significant impact on the school district data.
+```python
+	Total Schools	Total Students	Total Budget	Average Math Score	Average Reading Score	% Passing Math	% Passing Reading	% Overall Passing
+0	15	39,170	$24,649,428.00	78.9	81.9	74.8	85.7	64.9
 ### How is the school summary affected?
 The school summary shows a significant impact of the results from omission of 9th grade students at Thomas High School. Prior to omission of these 9th graders, the passing scores for math, reading & overall passing for Thomas High was 66.91%, 69.67% & 65.07% respectively. After omitting these students, the passing scores for math, reading & overall passing for Thomas High now is 93.19%, 97.01% & 90.63% respectively.
 ### How does replacing the ninth graders’ math and reading scores affect Thomas High School’s performance relative to the other schools?
