@@ -116,7 +116,34 @@ district_summary_df["% Overall Passing"] = district_summary_df["% Overall Passin
 # Display the data frame
 district_summary_df
 
-</table>
+<style  type="text/css" >
+</style>  
+<table id="T_1a0abed2_9a44_11e7_bb3a_0c4de9c48691" > 
+<thead>    <tr> 
+        <th class="blank level0" ></th> 
+        <th class="col_heading level0 col0" >Total Schools</th> 
+        <th class="col_heading level0 col1" >Total Students</th> 
+        <th class="col_heading level0 col2" >Total Budget</th> 
+        <th class="col_heading level0 col3" >Average Reading Score</th> 
+        <th class="col_heading level0 col4" >Average Math Score</th> 
+        <th class="col_heading level0 col5" >% Passing Reading</th> 
+        <th class="col_heading level0 col6" >% Passing Math</th> 
+        <th class="col_heading level0 col7" >Overall Passing Rate</th> 
+    </tr></thead> 
+<tbody>    <tr> 
+        <th id="T_1a0abed2_9a44_11e7_bb3a_0c4de9c48691" class="row_heading level0 row0" >0</th> 
+        <td id="T_1a0abed2_9a44_11e7_bb3a_0c4de9c48691row0_col0" class="data row0 col0" >15</td> 
+        <td id="T_1a0abed2_9a44_11e7_bb3a_0c4de9c48691row0_col1" class="data row0 col1" >39170</td> 
+        <td id="T_1a0abed2_9a44_11e7_bb3a_0c4de9c48691row0_col2" class="data row0 col2" >$24,649,428.00</td> 
+        <td id="T_1a0abed2_9a44_11e7_bb3a_0c4de9c48691row0_col3" class="data row0 col3" >81.9</td> 
+        <td id="T_1a0abed2_9a44_11e7_bb3a_0c4de9c48691row0_col4" class="data row0 col4" >79.0</td> 
+        <td id="T_1a0abed2_9a44_11e7_bb3a_0c4de9c48691row0_col5" class="data row0 col5" >85.8%</td> 
+        <td id="T_1a0abed2_9a44_11e7_bb3a_0c4de9c48691row0_col6" class="data row0 col6" >75.0%</td> 
+        <td id="T_1a0abed2_9a44_11e7_bb3a_0c4de9c48691row0_col7" class="data row0 col7" >65.2%</td> 
+    </tr></tbody> 
+</table> 
+
+
 ```
 ### How is the school summary affected?
 The school summary shows a significant impact of the results from omission of 9th grade students at Thomas High School. Prior to omission of these 9th graders, the passing scores for math, reading & overall passing for Thomas High was 66.91%, 69.67% & 65.07% respectively. After omitting these students, the passing scores for math, reading & overall passing for Thomas High now is 93.19%, 97.01% & 90.63% respectively.
