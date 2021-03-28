@@ -115,6 +115,8 @@ district_summary_df["% Overall Passing"] = district_summary_df["% Overall Passin
 
 # Display the data frame
 district_summary_df
+
+</table>
 ```
 ### How is the school summary affected?
 The school summary shows a significant impact of the results from omission of 9th grade students at Thomas High School. Prior to omission of these 9th graders, the passing scores for math, reading & overall passing for Thomas High was 66.91%, 69.67% & 65.07% respectively. After omitting these students, the passing scores for math, reading & overall passing for Thomas High now is 93.19%, 97.01% & 90.63% respectively.
