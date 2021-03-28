@@ -37,6 +37,12 @@ district_summary_df
 The school summary shows a significant impact of the results from omission of 9th grade students at Thomas High School. Prior to omission of these 9th graders, the passing scores for math, reading & overall passing for Thomas High was 66.91%, 69.67% & 65.07% respectively. After omitting these students, the passing scores for math, reading & overall passing for Thomas High now is 93.19%, 97.01% & 90.63% respectively.
 ### How does replacing the ninth graders’ math and reading scores affect Thomas High School’s performance relative to the other schools?
 After omitting the passing scores for math, reading & overall passing for 9th graders in Thomas High, the school is now the within the top 5 schools in the district and is in the 2nd position.
+```python
+# Sort and show top five schools.
+top_schools = per_school_summary_df.sort_values(["% Overall Passing"], ascending=False)
+top_schools.head()
+```
+
 ### How does replacing the ninth-grade scores affect the following:
 #### Math and reading scores by grade:
 The values for math & reading scores are set to nan for 9th graders in Thomas high. Hence there is not a significant impact to the data itself.
