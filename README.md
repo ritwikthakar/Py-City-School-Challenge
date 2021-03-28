@@ -2,10 +2,93 @@
 ## Overview of the School District Analysis:
 The school board has notified Maria and her supervisor about the evidence of academic dishonesty; specifically, reading and math grades for Thomas High School ninth graders. Although the school board does not know the full extent of the academic dishonesty, they want to uphold state-testing standards and have turned to Maria for help. Maria has asked to replace the math and reading scores for 9th Graders in Thomas High School to be omitted while keeping the rest of the data intact. Once this function is complete, Maria has asked to repeat the school district analysis that you did and write up a report to describe how these changes affected the overall analysis.
 
+```python
+# Dependencies and Setup
+import pandas as pd
+
+# File to Load (Remember to change the path if needed.)
+school_data_to_load = ("C:/Users/ritwi/OneDrive/Desktop/Classwork/Weekly Challenges/Challenge 4/Resources/schools_complete.csv")
+student_data_to_load = ("C:/Users/ritwi/OneDrive/Desktop/Classwork/Weekly Challenges/Challenge 4/Resources/students_complete.csv")
+
+# Read the School Data and Student Data and store into a Pandas DataFrame
+school_data_df = pd.read_csv(school_data_to_load)
+student_data_df = pd.read_csv(student_data_to_load)
+
+# Cleaning Student Names and Replacing Substrings in a Python String
+# Add each prefix and suffix to remove to a list.
+prefixes_suffixes = ["Dr. ", "Mr. ","Ms. ", "Mrs. ", "Miss ", " MD", " DDS", " DVM", " PhD"]
+
+# Iterate through the words in the "prefixes_suffixes" list and replace them with an empty space, "".
+for word in prefixes_suffixes:
+    student_data_df["student_name"] = student_data_df["student_name"].str.replace(word,"")
+
+# Check names.
+student_data_df.head(10)
+
+# Install numpy using conda install numpy or pip install numpy. 
+# Step 1. Import numpy as np.
+import numpy as np
+
+# Step 2. Use the loc method on the student_data_df to select all the reading scores from the 9th grade at Thomas High School and replace them with NaN.
+student_data_df.loc[(student_data_df["school_name"] == "Thomas High School") & (student_data_df["grade"] == "9th"), "reading_score"]=np.nan
+
+#  Step 3. Refactor the code in Step 2 to replace the math scores with NaN.
+student_data_df.loc[(student_data_df["school_name"] == "Thomas High School") & (student_data_df["grade"] == "9th"), "math_score"]=np.nan
+
+```
+
 ## Results:
 ### How is the district summary affected?
 By omitting grade 9th student data from the school district summary, the change in results was very insignificant. A total of 461 student’s maths & reading scores were attributed to Grade 9th Thomas High School students out of a total of 39,170 students in the whole district. This number is 1.1% and hence has not made a significant impact on the school district data.
 ```python
+# Combine the data into a single dataset
+school_data_complete_df = pd.merge(student_data_df, school_data_df, how="left", on=["school_name", "school_name"])
+# Calculate the Totals (Schools and Students)
+school_count = len(school_data_complete_df["school_name"].unique())
+student_count = school_data_complete_df["Student ID"].count()
+
+# Calculate the Total Budget
+total_budget = school_data_df["budget"].sum()
+
+# Calculate the Average Scores using the "clean_student_data".
+average_reading_score = school_data_complete_df["reading_score"].mean()
+average_math_score = school_data_complete_df["math_score"].mean()
+
+# Step 1. Get the number of students that are in ninth grade at Thomas High School.
+# These students have no grades. 
+Thomas_Student_count = school_data_complete_df.loc[(school_data_complete_df["school_name"] == "Thomas High School") & (school_data_complete_df["grade"] == "9th")]
+ninth_student_count = Thomas_Student_count["Student ID"].count()
+
+
+# Get the total student count 
+student_count = school_data_complete_df["Student ID"].count()
+
+
+# Step 2. Subtract the number of students that are in ninth grade at 
+# Thomas High School from the total student count to get the new total student count.
+new_total_student_df = (student_count - ninth_student_count)
+
+# Calculate the passing rates using the "clean_student_data".
+passing_math_count = school_data_complete_df[(school_data_complete_df["math_score"] >= 70)].count()["student_name"]
+passing_reading_count = school_data_complete_df[(school_data_complete_df["reading_score"] >= 70)].count()["student_name"]
+
+# Step 3. Calculate the passing percentages with the new total student count.
+passing_math_percentage = passing_math_count / float(new_total_student_df) * 100
+passing_reading_percentage = passing_reading_count / float(new_total_student_df) * 100
+
+# Calculate the students who passed both reading and math.
+passing_math_reading = school_data_complete_df[(school_data_complete_df["math_score"] >= 70)
+                                               & (school_data_complete_df["reading_score"] >= 70)]
+
+# Calculate the number of students that passed both reading and math.
+overall_passing_math_reading_count = passing_math_reading["student_name"].count()
+
+
+# Step 4.Calculate the overall passing percentage with new total student count.
+overall_passing_percentage = overall_passing_math_reading_count / (new_total_student_df) * 100
+
+
+
 # Create a DataFrame
 district_summary_df = pd.DataFrame(
           [{"Total Schools": school_count, 
