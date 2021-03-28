@@ -20,7 +20,7 @@ After omitting 641 students from grade 9th the school size for Thomas High chang
 There is no change to school type. Thomas High was classified as a charter prior to omission and remains to be a charter past omission too.
 ## Summary
 There have been 4 major changes to the school district summary after the omission of scores of 9thgrade Thomas High students which are as follows.
--Thomas High now among the top 5 schools in the district coming in at 2nd place
+- Thomas High now among the top 5 schools in the district coming in at 2nd place
 - After omitting these students, the passing scores for math, reading & overall passing for Thomas High has increased to 93.19%, 97.01% & 90.63% respectively.
 - The school size for Thomas High changes from 1635 to 994 which may cause the school to now be classified as a small school as opposed to medium
 - Spending data is affected a little because of the omission sine now it appears as if all the allocation of funds has been made towards grades 10th, 11th & 12th
